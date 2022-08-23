@@ -76,9 +76,9 @@ mongoose.connect(uri,{useNewUrlParser:true,useUnifiedTopology: true}).then(()=>{
 app.use('/product',ProductRouter); // מקבל ניתוב ובנוסף לראוטר המטפל בניתוב מוצרים ושכבה שמטפלת בהרשאות 
 //--  במידה ופונים לניתוב של המשתמשים שלי הוא מפנה בהתאם---
 app.use('/user',UserRouter); // מקבל ניתוב ובנוסף לראוטר המטפל בניתוב משתמשים
-// במידה וקיבלתי נתיב שהוא לא אחד מהרשומים למעלה נחזיר למשתמש הדף לא נמצאה
+
 app.all('*',(req,res)=>{ // יש לוודא שנתיב זה יהיה האחרון הוא יתפוס מה שלא נתפס בניתובים הקודמים
-  res.status(404).json({Msg:"404 page not found cheak your route "})
+  res.status(404).json({Msg:"welcome: use /product or /user as your route for more information https://github.com/YuriKha/EcommerceLikeFakeStore.git"})
 });
 //-----------------------------------------------------------
 
