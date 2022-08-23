@@ -30,7 +30,6 @@ the product looks like this:
 "Price": 8
 ---------------------
 
-
 -- get product by ID -- [GET]
 -----------------------
 /product/2
