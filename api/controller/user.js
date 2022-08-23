@@ -17,8 +17,8 @@ module.exports={
             console.log("im here");
             if(userfound.length>0) //   במידה ואכן נמצאה לי משתמש כזה הוא ידפיס שגיאה 
             {
-                // קיים משתמש עם האיידי הזה
-                return res.status(406).json({Msg:"this ID is in use"});
+                // קיים משתמש עם האימייל הזה
+                return res.status(406).json({Msg:"this email is in use"});
             }
             else // אחרת יצפין לי את הסיסמא וישמור את כל הנתונים
             {
