@@ -1,8 +1,8 @@
 # EcommerceLikeFakeStore
 Fake store just like "Fake Store API" website (https://fakestoreapi.com/)
 
-any one can add/delete/update
-every product or user 
+any one can add, delete, update any product or user
+ 
 and make any update on every field (like ID or pass)
 
 +++ product +++
@@ -52,7 +52,7 @@ the product looks like this:
 
 -- get product by ID -- [GET]
 -----------------------
-/product/2
+/product/ id of the product you want (example /product/2 )
 
 -- output example --
 
@@ -73,7 +73,9 @@ the product looks like this:
 /product/ id product you want to delete (for example: /product/2 - will delete product with the id 2)
 
 -- output example --
+
 you will get a massege that tells
+
 product deleted with the id of the product
 
 ---------------------
@@ -188,6 +190,64 @@ you will get a massege
 welcome back and a TOKEN (Authontication - no use for it for now)
 
 -------------------------
+
+-- get all user -- [GET]
+--------------------------------
+/user 
+
+-- output example --
+
+"Uid": 2,
+
+"FirstName": "shuki",
+
+"LastName": "Kokanoon",
+
+"Phone": "099842364",
+
+"Email": "shukia@gmail.com",
+
+"Adress": "haana 98/1 ashdod",
+
+"Pass": "134",
+
+"Uid": 1,
+
+"FirstName": "shlomi",
+
+"LastName": "isra",
+
+"Phone": "068426666",
+
+"Email": "shlomi@gmail.com",
+
+"Adress": "ana 19/5 ashqelon",
+
+"Pass": "1234",
+
+---------------------------------
+
+-- get user by ID -- [GET]
+-----------------------
+/user/ id of the user you want (example: /user/2 )
+
+-- output example --
+
+"Uid": 2,
+
+"FirstName": "shuki",
+
+"LastName": "Kokanoon",
+
+"Phone": "099842364",
+
+"Email": "shukia@gmail.com",
+
+"Adress": "haana 98/1 ashdod",
+
+"Pass": "134",
+
+---------------------
 
 -- delete user by ID -- [DELETE]
 --------------------------------

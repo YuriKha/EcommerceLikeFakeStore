@@ -82,6 +82,28 @@ module.exports={
             }
         });
     },
+    //------- מביא את כל המשתמשים הרשומים ---
+    GetAllUser:(req,res)=>{
+        user.find().then((alluser)=>{ // כל האוסף של המשתמשים
+            // אני מחזיר את כל המשתמשים
+            return res.status(200).json({Msg:"this is all the users: " ,alluser});   
+        });  
+    },
+    //--- מביא את המשתמש עם האיידי המבוקש ---
+    GetUserById:(req,res)=>{
+        user.find({Uid:req.params.pid}).then((userfound)=>{ // מחפש בבסיס נתונים שלי לפי האיידי שהתקבל
+            if(userfound.length>0)
+            {
+                 // מחזיר את המשתמש שאתה מחפש
+                 return res.status(200).json({Msg:"the user that you looking for " ,userfound});
+            } 
+            else
+            {
+                 // במידה ולא מוצא משתמש עם האיידי שביקשתה 
+                 return res.status(406).json({Msg:"no user with that ID " ,Uid:req.params.pid}); 
+            }           
+         });  
+    },
     //------ מחיקת משתמש מבסיס הנתונים-----
     DeleteUser:(req,res)=>{
         user.find({Uid:req.params.pid}).then((userfound)=>{ // בודק אם בכלל קיים כזה משתמש 
